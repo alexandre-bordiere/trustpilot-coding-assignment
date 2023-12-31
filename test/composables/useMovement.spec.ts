@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import useMovement from '../../src/composables/useMovement'
 import { Maze } from '../../src/types'
 
-describe('useMovement composable function', () => {
+describe('useMovement', () => {
   const maze: Maze = {
     uuid: 'cd0c2dad-7327-44e6-92e8-72393de079b4',
     dimensions: {
@@ -322,28 +322,28 @@ describe('useMovement composable function', () => {
   const { getPossibleMovements, getShortestPath } = useMovement(maze)
 
   describe('getPossibleMovements', () => {
-    it('should return possible movements when no specific condition is applied', () => {
+    it('returns the possible movements when no specific condition is applied', () => {
       expect(getPossibleMovements(275)).toStrictEqual([
         { direction: 'west', newPosition: 274 },
         { direction: 'east', newPosition: 276 },
       ])
     })
 
-    it('should return possible movements when against the top wall', () => {
+    it('returns the possible movements when against the top wall', () => {
       expect(getPossibleMovements(1)).toStrictEqual([
         { direction: 'south', newPosition: 21 },
         { direction: 'west', newPosition: 0 },
       ])
     })
 
-    it('should return possible movements when against the left and bottom walls', () => {
+    it('returns the possible movements when against the left and bottom walls', () => {
       expect(getPossibleMovements(280)).toStrictEqual([
         { direction: 'north', newPosition: 260 },
         { direction: 'east', newPosition: 281 },
       ])
     })
 
-    it('should return possible movements when against the right wall', () => {
+    it('returns the possible movements when against the right wall', () => {
       expect(getPossibleMovements(279)).toStrictEqual([
         { direction: 'south', newPosition: 299 },
         { direction: 'west', newPosition: 278 },
@@ -352,7 +352,7 @@ describe('useMovement composable function', () => {
   })
 
   describe('getShortestPath', () => {
-    it('should order the pony to stay on the same cell when it is spawning on the same cell as the end', () => {
+    it('orders the pony to stay on the same cell when it is spawning on the same cell than the end', () => {
       const maze2 = {
         ...maze,
         positions: {
@@ -367,7 +367,7 @@ describe('useMovement composable function', () => {
       ])
     })
 
-    it('should return the shortest path with the given initial position', () => {
+    it('returns the shortest path with the given initial position', () => {
       expect(getShortestPath(maze.positions.pony)).toHaveLength(9)
     })
   })
