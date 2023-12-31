@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import useMovement from '../../src/composables/useMovement'
 import { Maze } from '../../src/types'
 

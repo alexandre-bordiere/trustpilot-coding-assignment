@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import useCell from '../../src/composables/useCell'
 import { Maze } from '../../src/types'
 
