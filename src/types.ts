@@ -2,9 +2,9 @@ export type Direction = 'east' | 'north' | 'south' | 'stay' | 'west'
 
 export interface FetchMazeResponse {
   'end-point': [number]
-  domokun: number[]
-  pony: number[]
-  size: number[]
+  domokun: [number]
+  pony: [number]
+  size: [number, number]
   data: ('north' | 'west')[][]
 }
 
