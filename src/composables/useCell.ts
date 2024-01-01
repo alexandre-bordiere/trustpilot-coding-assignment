@@ -1,20 +1,19 @@
 import { computed } from 'vue'
 
-import { Direction, Maze, UseCell } from '../types'
+import type { Direction, Maze, UseCell } from '../types'
 
 export default function useCell(maze: Maze): UseCell {
   const cellsCount = computed(() => maze.dimensions.height * maze.dimensions.width)
 
   const getAdjacentCellPosition = (position: number, direction: Direction) => {
-    if (direction === 'north') {
+    if (direction === 'north')
       return position - maze.dimensions.width
-    } else if (direction === 'south') {
+    else if (direction === 'south')
       return position + maze.dimensions.width
-    } else if (direction === 'west') {
+    else if (direction === 'west')
       return position - 1
-    } else if (direction === 'east') {
+    else if (direction === 'east')
       return position + 1
-    }
 
     return position
   }

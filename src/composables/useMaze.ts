@@ -1,7 +1,7 @@
 import { reactive } from 'vue'
 
 import http from '../http'
-import { FetchMazeResponse, GenerateMazeResponse, Maze, UseMaze } from '../types'
+import type { FetchMazeResponse, GenerateMazeResponse, Maze, UseMaze } from '../types'
 
 export default function useMaze(): UseMaze {
   const form = reactive({
@@ -41,9 +41,9 @@ export default function useMaze(): UseMaze {
   const generateMaze = async (): Promise<Maze> => {
     const { data } = await http.post<GenerateMazeResponse>('/maze', {
       'maze-player-name': 'Pinkie Pie',
-      'maze-height': parseInt(form.height.toString(), 10),
-      'maze-width': parseInt(form.width.toString(), 10),
-      difficulty: parseInt(form.difficulty.toString(), 10),
+      'maze-height': Number.parseInt(form.height.toString(), 10),
+      'maze-width': Number.parseInt(form.width.toString(), 10),
+      'difficulty': Number.parseInt(form.difficulty.toString(), 10),
     })
 
     return fetchMaze(data.maze_id)

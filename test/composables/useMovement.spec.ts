@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import useMovement from '../../src/composables/useMovement'
-import { Maze } from '../../src/types'
+import type { Maze } from '../../src/types'
 
 describe('useMovement', () => {
   const maze: Maze = {

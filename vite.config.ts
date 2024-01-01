@@ -8,7 +8,7 @@ export default defineConfig({
   test: {
     coverage: {
       provider: 'v8',
-      include: ['src/composables/*']
-    }
+      include: ['src/composables/*'],
+    },
   },
 })

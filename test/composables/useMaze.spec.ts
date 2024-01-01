@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/unbound-method, camelcase */
-
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import useMaze from '../../src/composables/useMaze'
@@ -10,10 +8,10 @@ vi.mock('../../src/http', () => ({
     get: vi.fn().mockResolvedValue({
       data: {
         'end-point': [21],
-        domokun: [12],
-        pony: [25],
-        size: [15, 15],
-        data: [],
+        'domokun': [12],
+        'pony': [25],
+        'size': [15, 15],
+        'data': [],
       },
     }),
     post: vi.fn().mockResolvedValue({
@@ -75,7 +73,7 @@ describe('useMaze', () => {
         'maze-player-name': 'Pinkie Pie',
         'maze-height': 15,
         'maze-width': 15,
-        difficulty: 0,
+        'difficulty': 0,
       })
     })
   })

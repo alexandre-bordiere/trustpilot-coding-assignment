@@ -1,8 +1,8 @@
 {
   "name": "trustpilot-coding-assignment",
+  "type": "module",
   "author": "Alexandre Bordiere",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -16,7 +16,7 @@
     "vue": "^3.4.3"
   },
   "devDependencies": {
-    "@alexandre-bordiere/eslint-config": "^2.3.0",
+    "@antfu/eslint-config": "^2.6.1",
     "@vitejs/plugin-vue": "^5.0.2",
     "@vitest/coverage-v8": "^1.1.1",
     "autoprefixer": "^10.4.16",

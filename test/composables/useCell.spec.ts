@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import useCell from '../../src/composables/useCell'
-import { Maze } from '../../src/types'
+import type { Maze } from '../../src/types'
 
 describe('useCell', () => {
   const maze: Maze = {

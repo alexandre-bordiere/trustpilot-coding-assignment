@@ -1,4 +1,4 @@
-import { Direction, Maze, Movement, UseMovement } from '../types'
+import type { Direction, Maze, Movement, UseMovement } from '../types'
 
 import useCell from './useCell'
 
@@ -16,27 +16,22 @@ export default function useMovement(maze: Maze): UseMovement {
   const getPossibleMovements = (position: number): Movement[] => {
     // If the pony has spawned on the same cell as the end
     // Then the only possible direction is "stay".
-    if (maze.positions.pony === maze.positions.end) {
+    if (maze.positions.pony === maze.positions.end)
       return [{ direction: 'stay', newPosition: position }]
-    }
 
     const directions: Direction[] = []
 
-    if (canMoveToCellAbove(position)) {
+    if (canMoveToCellAbove(position))
       directions.push('north')
-    }
 
-    if (canMoveToCellBelow(position)) {
+    if (canMoveToCellBelow(position))
       directions.push('south')
-    }
 
-    if (canMoveToPreviousCell(position)) {
+    if (canMoveToPreviousCell(position))
       directions.push('west')
-    }
 
-    if (canMoveToNextCell(position)) {
+    if (canMoveToNextCell(position))
       directions.push('east')
-    }
 
     return directions.map(direction => ({
       direction,
@@ -59,9 +54,8 @@ export default function useMovement(maze: Maze): UseMovement {
 
       paths[index].push({ direction, newPosition })
 
-      if (newPosition === maze.positions.end) {
+      if (newPosition === maze.positions.end)
         break
-      }
 
       getShortestPath(newPosition, currentPosition, paths, index)
     }
