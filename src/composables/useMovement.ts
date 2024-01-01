@@ -1,8 +1,8 @@
-import type { Direction, Maze, Movement, UseMovement } from '../types'
+import type { Direction, Maze, Movement } from '../types'
 
 import useCell from './useCell'
 
-export default function useMovement(maze: Maze): UseMovement {
+export default function useMovement(maze: Maze) {
   const { getAdjacentCellPosition, isFirstColumn, isLastColumn, isFirstRow, isLastRow } = useCell(maze)
 
   const canMoveToCellAbove = (position: number) => !isFirstRow(position) && !maze.structure[position].includes('north')

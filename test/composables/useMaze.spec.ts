@@ -52,7 +52,7 @@ describe('useMaze', () => {
 
   describe('generateMaze', () => {
     it('test', async () => {
-      await expect(generateMaze()).resolves.toStrictEqual({
+      await expect(generateMaze({ difficulty: 5, height: 15, width: 15 })).resolves.toStrictEqual({
         uuid: 'cd0c2dad-7327-44e6-92e8-72393de079b4',
         dimensions: {
           height: 15,
@@ -73,7 +73,7 @@ describe('useMaze', () => {
         'maze-player-name': 'Pinkie Pie',
         'maze-height': 15,
         'maze-width': 15,
-        'difficulty': 0,
+        'difficulty': 5,
       })
     })
   })

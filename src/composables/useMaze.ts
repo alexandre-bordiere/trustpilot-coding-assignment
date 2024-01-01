@@ -1,15 +1,9 @@
 import { reactive } from 'vue'
 
 import http from '../http'
-import type { FetchMazeResponse, GenerateMazeResponse, Maze, UseMaze } from '../types'
+import type { FetchMazeResponse, GenerateMazeData, GenerateMazeResponse, Maze } from '../types'
 
-export default function useMaze(): UseMaze {
-  const form = reactive({
-    height: 15,
-    width: 15,
-    difficulty: 0,
-  })
-
+export default function useMaze() {
   const maze = reactive<Maze>({
     uuid: '',
     dimensions: {
@@ -24,7 +18,7 @@ export default function useMaze(): UseMaze {
     structure: [],
   })
 
-  const fetchMaze = async (uuid: string): Promise<Maze> => {
+  async function fetchMaze(uuid: string): Promise<Maze> {
     const { data } = await http.get<FetchMazeResponse>(`/maze/${uuid}`)
 
     maze.uuid = uuid
@@ -38,16 +32,16 @@ export default function useMaze(): UseMaze {
     return maze
   }
 
-  const generateMaze = async (): Promise<Maze> => {
-    const { data } = await http.post<GenerateMazeResponse>('/maze', {
+  async function generateMaze(data: GenerateMazeData): Promise<Maze> {
+    const res = await http.post<GenerateMazeResponse>('/maze', {
       'maze-player-name': 'Pinkie Pie',
-      'maze-height': Number.parseInt(form.height.toString(), 10),
-      'maze-width': Number.parseInt(form.width.toString(), 10),
-      'difficulty': Number.parseInt(form.difficulty.toString(), 10),
+      'maze-height': data.height,
+      'maze-width': data.width,
+      'difficulty': data.difficulty,
     })
 
-    return fetchMaze(data.maze_id)
+    return fetchMaze(res.data.maze_id)
   }
 
-  return { form, maze, fetchMaze, generateMaze }
+  return { maze, fetchMaze, generateMaze }
 }
