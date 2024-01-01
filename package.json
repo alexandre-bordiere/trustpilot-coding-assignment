@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@alexandre-bordiere/eslint-config": "^2.3.0",
-    "@vitejs/plugin-vue": "^5.0.0",
+    "@vitejs/plugin-vue": "^5.0.2",
     "@vitest/coverage-v8": "^1.1.1",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
