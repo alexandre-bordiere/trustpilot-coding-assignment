@@ -1,10 +1,10 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import useMaze from '../../src/composables/useMaze'
-import http from '../../src/http'
+import { http } from '../../src/http'
 
 vi.mock('../../src/http', () => ({
-  default: {
+  http: {
     get: vi.fn().mockResolvedValue({
       data: {
         'end-point': [21],

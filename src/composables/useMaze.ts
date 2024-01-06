@@ -1,6 +1,6 @@
 import { reactive } from 'vue'
 
-import http from '../http'
+import { http } from '../http'
 import type { FetchMazeResponse, GenerateMazeData, GenerateMazeResponse, Maze } from '../types'
 
 export default function useMaze() {

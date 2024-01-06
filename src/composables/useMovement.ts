@@ -13,7 +13,7 @@ export default function useMovement(maze: Maze) {
   const canMoveToPreviousCell = (position: number) =>
     !isFirstColumn(position) && !maze.structure[position].includes('west')
 
-  const getPossibleMovements = (position: number): Movement[] => {
+  function getPossibleMovements(position: number): Movement[] {
     // If the pony has spawned on the same cell as the end
     // Then the only possible direction is "stay".
     if (maze.positions.pony === maze.positions.end)
@@ -39,7 +39,7 @@ export default function useMovement(maze: Maze) {
     }))
   }
 
-  const getShortestPath = (currentPosition: number, oldPosition?: number, paths: Movement[][] = [], index = 0) => {
+  function getShortestPath(currentPosition: number, oldPosition?: number, paths: Movement[][] = [], index = 0) {
     const baseIndex = index
     const isFirstMovement = typeof oldPosition === 'undefined'
 

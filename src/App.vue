@@ -20,7 +20,7 @@ import { ref } from 'vue'
 import Form from './components/Form.vue'
 import useMaze from './composables/useMaze'
 import useMovement from './composables/useMovement'
-import http from './http'
+import { http } from './http'
 import type { GenerateMazeData, MovePlayerResponse } from './types'
 import Maze from './components/Maze.vue'
 

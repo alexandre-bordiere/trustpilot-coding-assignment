@@ -66,6 +66,7 @@
 
 <script lang="ts" setup>
 import { reactive } from 'vue'
+
 import type { GenerateMazeData } from '../types'
 
 const emit = defineEmits<{ submit: [data: GenerateMazeData] }>()
