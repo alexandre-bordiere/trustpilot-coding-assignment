@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "axios": "^1.6.7",
-    "vue": "^3.4.18"
+    "vue": "^3.4.19"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",
