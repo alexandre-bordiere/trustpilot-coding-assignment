@@ -16,7 +16,7 @@
     "vue": "^3.4.21"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.11.4",
+    "@antfu/eslint-config": "^2.11.6",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitest/coverage-v8": "^1.4.0",
     "autoprefixer": "^10.4.19",
