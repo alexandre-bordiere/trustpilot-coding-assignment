@@ -1,19 +1,10 @@
 # Trustpilot Pony Challenge by Alexandre Bordiere
 
-## Installation
-
-- Clone the project
-
-- Install the dependencies:
-
-```
-docker-compose run --rm app npm install
-```
-
 ## Usage
 
-- Run the application:
+> [!IMPORTANT]
+> Make sure to have `Docker` with the `compose` plugin installed.
 
 ```
-docker-compose up
+docker compose up --watch
 ```

@@ -4,7 +4,7 @@
   "author": "Alexandre Bordiere",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
     "check:lint": "eslint .",
     "check:types": "vue-tsc --noEmit",
