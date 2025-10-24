@@ -1,5 +1,4 @@
 import type { Direction, Maze, Movement } from '../types'
-
 import useCell from './useCell'
 
 export default function useMovement(maze: Maze) {
