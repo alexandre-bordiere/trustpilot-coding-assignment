@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --host",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc -b && vite build",
     "check:lint": "eslint .",
-    "check:types": "vue-tsc --noEmit",
+    "check:types": "vue-tsc -b",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage"
   },
@@ -19,8 +19,10 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
+    "@types/node": "^24.9.1",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vitest/coverage-v8": "^4.0.2",
+    "@vue/tsconfig": "^0.8.1",
     "typescript": "^5.9.3",
     "vite": "^7.1.12",
     "vitest": "^4.0.1",

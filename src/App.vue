@@ -32,7 +32,7 @@ const { getShortestPath } = useMovement(maze)
 async function generateAndSolveMaze(data: GenerateMazeData) {
   await generateMaze(data)
 
-  const shortestPath = getShortestPath(maze.positions.pony)
+  const shortestPath = getShortestPath(maze.positions.pony) ?? []
 
   for (const { direction } of shortestPath) {
     const { data } = await http.post<MovePlayerResponse>(`/maze/${maze.uuid}`, { direction })

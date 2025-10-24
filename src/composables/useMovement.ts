@@ -5,13 +5,13 @@ import useCell from './useCell'
 export default function useMovement(maze: Maze) {
   const { getAdjacentCellPosition, isFirstColumn, isLastColumn, isFirstRow, isLastRow } = useCell(maze)
 
-  const canMoveToCellAbove = (position: number) => !isFirstRow(position) && !maze.structure[position].includes('north')
+  const canMoveToCellAbove = (position: number) => !isFirstRow(position) && !maze.structure[position]?.includes('north')
   const canMoveToCellBelow = (position: number) =>
-    !isLastRow(position) && !maze.structure[getAdjacentCellPosition(position, 'south')].includes('north')
+    !isLastRow(position) && !maze.structure[getAdjacentCellPosition(position, 'south')]?.includes('north')
   const canMoveToNextCell = (position: number) =>
-    !isLastColumn(position) && !maze.structure[getAdjacentCellPosition(position, 'east')].includes('west')
+    !isLastColumn(position) && !maze.structure[getAdjacentCellPosition(position, 'east')]?.includes('west')
   const canMoveToPreviousCell = (position: number) =>
-    !isFirstColumn(position) && !maze.structure[position].includes('west')
+    !isFirstColumn(position) && !maze.structure[position]?.includes('west')
 
   function getPossibleMovements(position: number): Movement[] {
     // If the pony has spawned on the same cell as the end
@@ -52,7 +52,7 @@ export default function useMovement(maze: Maze) {
         index = paths.push(content.slice()) - 1
       }
 
-      paths[index].push({ direction, newPosition })
+      paths[index]?.push({ direction, newPosition })
 
       if (newPosition === maze.positions.end)
         break
