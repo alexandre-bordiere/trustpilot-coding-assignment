@@ -4,10 +4,4 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [tailwindcss(), vue()],
-  test: {
-    coverage: {
-      provider: 'v8',
-      include: ['src/composables/*'],
-    },
-  },
 })
