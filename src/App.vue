@@ -1,5 +1,5 @@
 <template>
-  <main id="app" class="bg-white p-4 rounded-lg">
+  <main id="app" class="bg-white p-4 rounded-lg w-92">
     <div v-if="hiddenImageUrl === ''">
       <div v-if="maze.uuid !== ''">
         <Maze :maze="maze" />
